@@ -4,3 +4,5 @@ Sources:
 # Fourier Transforms (scipy.fft): https://docs.scipy.org/doc/scipy/reference/tutorial/fft.html
 
 # General Algos: https://www.kaggle.com/residentmario/denoising-algorithms 
+
+# denoising method for one-dimensional data: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.565.1807&rep=rep1&type=pdf
