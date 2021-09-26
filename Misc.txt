@@ -6,3 +6,5 @@ Sources:
 # General Algos: https://www.kaggle.com/residentmario/denoising-algorithms 
 
 # denoising method for one-dimensional data: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.565.1807&rep=rep1&type=pdf
+
+# youtube-> Denoising data with FFT: https://www.youtube.com/watch?v=s2K1JfNR7Sc
