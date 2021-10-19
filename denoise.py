@@ -30,3 +30,37 @@ def denoise(f_noisy, freq_partition = 100, min_power = 0):
 
   # Inverse FFT of filtered signal
   return irfft(f_trans)
+
+
+def csv_to_arr(csv_filename):
+  return np.floor(np.genfromtxt(csv_filename, delimiter=',')[1:,1:-1].flatten()) #[:500]
+
+
+def diffABS(data_a,data_b,period=5):
+  
+  # Resize arr to cleanly fit the period size, make all value 0.
+  avg = np.zeros(data_a.size - data_a.size % period if data_a.size > data_b.size else data_b.size - data_b.size % period)
+
+  i = 0
+  j = period-1 if period-1>0 else 4
+  while j<data_b.size-1:
+    avg[i:j] = np.abs(data_a[i] * data_b[i:j] - data_b[i] * data_a[i:j])
+    i += period
+    j += period
+  
+  return avg
+
+
+def diff(data_a,data_b,period=5):
+  
+  # Resize arr to cleanly fit the period size, make all value 0.
+  avg = np.zeros(data_a.size - data_a.size % period if data_a.size > data_b.size else data_b.size - data_b.size % period)
+
+  i = 0
+  j = period-1 if period-1>0 else 4
+  while j<data_b.size-1:
+    avg[i:j] = data_a[i] * data_b[i:j] - data_b[i] * data_a[i:j]
+    i += period
+    j += period
+  
+  return avg
